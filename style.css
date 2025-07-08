@@ -160,6 +160,10 @@ header {
     padding: 2em;
 }
 
+.project-text h2 {
+    text-transform: capitalize;
+}
+
 .card {
     background-color: var(--color-white);
     border: 1px solid var(--color-gray-dark);
