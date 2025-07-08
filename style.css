@@ -20,6 +20,7 @@
 
     --color-blue-dark: #09073b;
     --color-orange-full: #FF4C33;
+    --color-orange-medium: #f67766;
     --color-natural: #D7E8BC;
     --color-gray-bright: #ccc;
     --color-gray-medium: #ababab;
@@ -81,7 +82,7 @@ header {
     a:focus {
         text-decoration: underline;
         background-color: var(--color-natural);
-        color: var(--color-gray-dark2);
+        color: var(--color-blue-dark);
     }
 }
 
@@ -130,7 +131,7 @@ header {
     display: flex;
     flex-direction: row;
     background-color: var(--color-gray-bright);
-    padding: 2em;
+    padding: 5em 2em;
     gap: 1em;
 
     .project-text {
@@ -140,7 +141,6 @@ header {
 
 .program-icons {
     display: flex;
-    /* justify-content: space-around; */
     align-items: center;
     flex-wrap: wrap;
     gap: 1em;
@@ -218,30 +218,81 @@ header {
     color: var(--color-gray-dark);
 }
 
-/* start > articles cards section*/
-.cards {
-    background-color: var(--color-orange-full);
-
-    /* temp */
-    height: 500px;
-    border: 2px dashed #000;
-}
-
 /* start > contact form section*/
+
 .contact-form {
+    padding: 2rem;
+    display: grid;
+    gap: 1rem;
     background-color: var(--color-gray-bright);
 
-    /* temp */
-    height: 200px;
-    border: 2px dashed #000;
+
+    @media (width > 720px) {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
+.contact-form-group {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.contact-form input {
+    border-radius: 0.5em;
+    padding: 0.5em;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    justify-self: start;
+    padding: 1.2em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: var(--color-orange-full);
+    cursor: pointer;
+}
+
+.contact-form button:hover,
+.contact-form button:focus {
+    background: var(--color-white);
+    border: 1px solid var(--color-orange-full);
+    color: var(--color-blue-dark);
+}
 
 /* start > footer section*/
 .site-footer {
-    background-color: var(--color-natural);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-blue-dark);
+    padding: 2em;
 
-    /* temp */
-    height: 100px;
-    border: 2px dashed #000;
+    ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    ul li {
+        list-style: none;
+
+        a {
+            display: block;
+            padding: 0.5em;
+            text-decoration: none;
+            color: var(--color-white);
+            font-size: 0.75em;
+            font-weight: var(--fw-regular);
+        }
+    }
+
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+}
+
+.site-footer p {
+    color: var(--color-white);
+    font-size: 0.75em;
 }
