@@ -90,7 +90,6 @@ header {
 .main-section {
     color: var(--color-gray-dark2);
     display: flex;
-    align-items: end;
     margin-top: 6em;
     padding-left: 2em;
 }
@@ -113,7 +112,6 @@ header {
 .main-section p {
     font-size: 1.1rem;
     margin: 2em 0;
-    max-width: 75%;
 }
 
 .item2 {
@@ -126,17 +124,23 @@ header {
     color: var(--color-orange-full);
 }
 
+@media (width < 715px) {
+    .main-section {
+        flex-direction: column;
+    }
+
+    .main-section p {
+        font-size: 0.75em;
+    }
+}
+
 /* start > services section*/
 .services-section {
     display: flex;
     flex-direction: row;
     background-color: var(--color-gray-bright);
-    padding: 5em 2em;
+    padding: 4em 2em;
     gap: 1em;
-
-    .project-text {
-        max-width: 40%;
-    }
 }
 
 .program-icons {
@@ -148,6 +152,17 @@ header {
     img {
         width: clamp(30px, calc(5vw + 1rem), 60px);
         align-content: center;
+    }
+}
+
+@media (width < 720px) {
+    .services-section {
+        flex-direction: column;
+        padding: 2em 1em;
+    }
+
+    .project-text p {
+        font-size: 0.75rem;
     }
 }
 
@@ -206,16 +221,24 @@ header {
 
 .card-header {
     font-size: 1.5em;
-    padding: 0.5rem 0;
+    padding: 0.5rem 1rem;
 }
 
-.card span img {
-    width: 8%;
-    padding: 0.5rem 0;
+.card p {
+    font-size: 1rem;
+    padding: 0 1rem;
+}
+
+.pro-icons {
+    padding: 0 1rem;
+}
+
+.pro-icons img {
+    width: 30px;
 }
 
 .card-footer {
-    padding: 0.5rem 0;
+    padding: 0 1rem 1rem 1rem;
     display: flex;
     gap: 1rem;
 }
@@ -225,8 +248,11 @@ header {
     border: 1px solid var(--color-orange-full);
     color: var(--color-white);
     border: none;
+    text-decoration: none;
     font-size: 0.75rem;
     padding: 1em;
+    line-height: 1.5em;
+    align-items: center;
     border-radius: 0.5em;
     cursor: pointer;
     display: block;
@@ -335,9 +361,13 @@ header {
     a:focus {
         text-decoration: underline;
     }
-}
 
-.site-footer p {
-    color: var(--color-white);
-    font-size: 0.75em;
+    p {
+        color: var(--color-white);
+        font-size: 0.75em;
+    }
+
+    @media (width < 720px) {
+        flex-direction: column;
+    }
 }
