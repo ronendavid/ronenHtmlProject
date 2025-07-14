@@ -152,11 +152,11 @@ header {
 }
 
 /* start > projects section*/
-.projects-wrapper {
+.projects-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
-    align-items: flex-start;
+    align-items: stretch;
     padding: 2em;
 }
 
@@ -176,41 +176,6 @@ header {
     p {
         margin: 0.5em 0;
     }
-
-    ul {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5em;
-    }
-
-    ul li {
-        list-style: none;
-
-    }
-
-    ul li a {
-        border: 1px solid #000;
-        border-radius: 0.5em;
-        display: block;
-        padding: 0.5em;
-        font-size: 1em;
-        text-decoration: none;
-        font-weight: var(--fw-regular);
-        max-width: 8rem;
-        color: var(--color-blue-dark);
-    }
-
-    ul li a:hover {
-        cursor: pointer;
-        background: var(--color-orange-full);
-        color: var(--color-white);
-    }
-}
-
-/* .projects-wrapper:has(> .pr-html) {} */
-
-.projects-wrapper:not(:has(> .pr-html)) {
-    display: none;
 }
 
 .card {
@@ -218,6 +183,7 @@ header {
     border: 1px solid var(--color-gray-dark);
     border-radius: 0.5rem;
     overflow: hidden;
+    display: grid;
 }
 
 .card-image {
@@ -240,42 +206,61 @@ header {
 
 .card-header {
     font-size: 1.5em;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0;
 }
 
-.card-body {
-    font-size: 1rem;
-    padding: 0 1rem;
-}
-
-.card-icons-wrapper {
-    padding: 0.5rem 1rem;
-
-    img {
-        width: 2rem;
-    }
+.card span img {
+    width: 8%;
+    padding: 0.5rem 0;
 }
 
 .card-footer {
-    padding: 1rem;
-    padding-top: 0;
+    padding: 0.5rem 0;
+    display: flex;
+    gap: 1rem;
 }
 
 .card-btn {
     background-color: var(--color-orange-full);
+    border: 1px solid var(--color-orange-full);
     color: var(--color-white);
     border: none;
-    font-size: 1rem;
+    font-size: 0.75rem;
     padding: 1em;
     border-radius: 0.5em;
     cursor: pointer;
+    display: block;
+    max-width: 130px;
+}
+
+.card-footer a:nth-child(2) {
+    background-color: var(--color-blue-dark);
+    border: 1px solid var(--color-blue-dark);
+}
+
+.card-footer a:nth-child(2):hover,
+.card-footer a:nth-child(2):focus {
+
+    color: var(--color-orange-full);
 }
 
 .card-btn:hover,
 .card-btn:focus {
     background: none;
     border: 1px solid var(--color-orange-full);
-    color: var(--color-gray-dark);
+    color: var(--color-blue-dark);
+}
+
+.filters:has(option[value="Html-Css"]:checked)~.project:not(:has(> .pro-html-css)) {
+    display: none;
+}
+
+.filters:has(option[value="JavaScript"]:checked)~.project:not(:has(> .pro-java)) {
+    display: none;
+}
+
+.filters:has(option[value="Design"]:checked)~.project:not(:has(> .pro-design)) {
+    display: none;
 }
 
 /* start > contact form section*/
