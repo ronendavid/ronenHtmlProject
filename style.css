@@ -27,8 +27,6 @@
     --color-gray-dark: #646464;
     --color-gray-dark2: #4e4e4e;
     --color-white: #fff;
-
-
 }
 
 html {
@@ -57,7 +55,6 @@ header {
     width: 100%;
     display: flex;
     justify-content: right;
-
 }
 
 .main-nav {
