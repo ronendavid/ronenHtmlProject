@@ -31,6 +31,10 @@
 
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--ff);
 }
@@ -370,4 +374,33 @@ header {
     @media (width < 720px) {
         flex-direction: column;
     }
+}
+
+/* start > back to top button*/
+.back-to-top {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-orange-full);
+    position: fixed;
+    right: 50px;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        color: var(--color-gray-bright);
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    @media (width < 450px) {
+        display: none;
+    }
+}
+
+.back-to-top:hover a,
+.back-to-top:focus a {
+    color: var(--color-gray-dark);
 }
