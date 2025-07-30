@@ -27,6 +27,7 @@
     --color-gray-dark: #646464;
     --color-gray-dark2: #4e4e4e;
     --color-white: #fff;
+    --color-black: #000;
 }
 
 html {
@@ -34,6 +35,7 @@ html {
 }
 
 body {
+    background-color: var(--color-white);
     font-family: var(--ff);
 }
 
@@ -51,10 +53,82 @@ h2 {
 }
 
 /* start > header section */
-header {
+.header-wrapper {
     width: 100%;
     display: flex;
     justify-content: right;
+}
+
+.dark {
+    z-index: 2;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+    appearance: none;
+}
+
+.dark-box {
+    z-index: 1;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: 2px solid #000;
+    width: 50px;
+    height: 25px;
+    background: #fff;
+    border-radius: 30px;
+}
+
+.dark:before {
+    content: "☀️";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    transition: transform .5s;
+}
+
+.dark:checked:before {
+    content: "🌙";
+    width: 10px;
+    height: 10px;
+    transform: translateX(20px);
+}
+
+.dark:checked~* {
+    .dark-box {
+        background: var(--color-black);
+    }
+
+    .main-nav {
+        background-color: var(--color-black);
+    }
+
+    .main-section,
+    .services-section,
+    .projects-list,
+    .projects-list .card,
+    .contact-form {
+        background-color: var(--color-black);
+        color: var(--color-white);
+    }
+
+    .services-section h2 {
+        color: var(--color-orange-full);
+    }
+
+    .services-section p {
+        color: var(--color-white);
+    }
+
+    .site-footer,
+    .site-footer a,
+    .site-footer p {
+        background-color: var(--color-gray-medium);
+        color: var(--color-black);
+    }
 }
 
 .main-nav {
