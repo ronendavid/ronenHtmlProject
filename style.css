@@ -134,6 +134,7 @@ h2 {
     max-width: 1440px;
     position: fixed;
     background-color: var(--color-orange-full);
+    z-index: 999;
 
     ul {
         display: flex;
