@@ -17,7 +17,6 @@
     --fw-black: 900;
 
     /* colors */
-
     --color-blue-dark: #09073b;
     --color-orange-full: #FF4C33;
     --color-orange-medium: #f67766;
@@ -161,6 +160,12 @@ h2 {
     }
 }
 
+@media (width < 650px) {
+    .main-nav {
+        display: none;
+    }
+}
+
 /* start > main section*/
 .main-section {
     color: var(--color-gray-dark2);
@@ -199,9 +204,11 @@ h2 {
     color: var(--color-orange-full);
 }
 
-@media (width < 715px) {
+@media (width < 650px) {
     .main-section {
         flex-direction: column;
+        margin-top: 2.5rem;
+        margin-right: 1rem;
     }
 
     .main-section p {
@@ -466,8 +473,14 @@ h2 {
         text-decoration: none;
     }
 
-    @media (width < 450px) {
-        display: none;
+    @media (width < 800px) {
+        right: 10px;
+        width: 35px;
+        height: 35px;
+
+        a {
+            font-size: 1rem;
+        }
     }
 }
 
