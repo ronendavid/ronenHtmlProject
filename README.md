@@ -14,6 +14,6 @@ This project includes:
 ## 🚀 Getting Started
 
 To view the site locally:
-1. Clone the repository: https://github.com/ronendavid/ronenHtmlProject.git
-   ```bash
+1. Clone the repository: 
+   ``https://github.com/ronendavid/ronenHtmlProject.git`bash
  
